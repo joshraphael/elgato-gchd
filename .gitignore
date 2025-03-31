@@ -1,2 +1,7 @@
 build
 CMakeLists.txt.user
+gchdm_*.dmg
+gchdm_*.dmg.img
+firmware/
+dmg/
+build/
