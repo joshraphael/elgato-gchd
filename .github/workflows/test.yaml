@@ -1,5 +1,10 @@
 name: Test Action
 on:
+  push:
+    branches:
+      - "!master"
+    paths:
+      - "wiki/**"
   pull_request:
     branches:
       - "**"
