@@ -53,6 +53,8 @@ don't need to manually extract the firmware files.
 1. Download the Elgato Game Capture HD Mac OS X driver version 2.0.3 from the Elgato official
 website: https://www.elgato.com/en/game-capture-hd-support
 
+**NOTE**: Elgato seems to have removed version 2.0.3 from their site. 2.5.0 and above is available. Look through a list of older versions of the software here https://help.elgato.com/hc/de/articles/360027963512-Elgato-Game-Capture-HD-Software-Release-Notes-macOS for a .dmg file (2.5.0 tested to be working)
+
 2. Install the tools to loopback mount the `gchd_*.dmg` file.
    There are two ways to do this:
 
