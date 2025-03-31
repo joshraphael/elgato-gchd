@@ -12,7 +12,7 @@ GAME_CAPTURE_SLUG=gchdm_25_1119
 
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install git dmg2img hfsprogs libusb-dev clang make build-essential cmake libusb-1.0 vlc pkg-config hfsplus -y
+sudo apt-get install git dmg2img libusb-dev clang make build-essential cmake libusb-1.0 pkg-config -y
 rm -rf firmware
 sudo umount dmg || /bin/true
 rm -rf dmg
@@ -25,7 +25,7 @@ sudo modprobe hfsplus
 curl --output ${GAME_CAPTURE_SLUG}.dmg --location "https://edge.elgato.com/egc/macos/egcm/${GAME_CAPTURE_VERSION}/final/${GAME_CAPTURE_SLUG}.dmg"
 dmg2img ${GAME_CAPTURE_SLUG}.dmg -o ${GAME_CAPTURE_SLUG}.dmg.img
 mkdir -p dmg
-sudo mount -o loop -t hfsplus ${GAME_CAPTURE_SLUG}.dmg.img dmg
+sudo mount -o loop ${GAME_CAPTURE_SLUG}.dmg.img dmg
 sudo mkdir -p /usr/local/lib/firmware/gchd
 ls -la dmg/
 sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_idle.bin /usr/local/lib/firmware/gchd/
