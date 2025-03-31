@@ -12,7 +12,7 @@ GAME_CAPTURE_SLUG=gchdm_25_1119
 
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install git dmg2img hfsprogs libusb-dev clang make build-essential cmake libusb-1.0 vlc pkg-config
+sudo apt-get install git dmg2img hfsprogs libusb-dev clang make build-essential cmake libusb-1.0 vlc pkg-config -y
 rm -rf firmware
 sudo umount dmg || /bin/true
 rm -rf dmg
