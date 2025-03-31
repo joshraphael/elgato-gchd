@@ -1,0 +1,18 @@
+name: Deploy GitHub wiki
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "wiki/**"
+concurrency:
+  group: wiki
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Andrew-Chen-Wang/github-wiki-action@v4
