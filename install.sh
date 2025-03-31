@@ -14,7 +14,8 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install git dmg2img hfsprogs libusb-dev clang make build-essential cmake libusb-1.0 vlc pkg-config
 rm -rf firmware
-rm -rf /tmp/dmg
+sudo umount dmg || /bin/true
+rm -rf dmg
 rm -rf build
 rm ${GAME_CAPTURE_SLUG}.dmg
 rm ${GAME_CAPTURE_SLUG}.dmg.img
@@ -24,14 +25,16 @@ sudo rm -rf /usr/local/lib/firmware/gchd
 mkdir -p firmware
 curl --output ${GAME_CAPTURE_SLUG}.dmg --location "https://edge.elgato.com/egc/macos/egcm/${GAME_CAPTURE_VERSION}/final/${GAME_CAPTURE_SLUG}.dmg"
 dmg2img ${GAME_CAPTURE_SLUG}.dmg -o ${GAME_CAPTURE_SLUG}.dmg.img
-mkdir -p /tmp/dmg
-sudo mount -o loop -t hfsplus ${GAME_CAPTURE_SLUG}.dmg.img /tmp/dmg
-sudo mkdir /usr/local/lib/firmware/gchd
-sudo cp /tmp/dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_idle.bin /usr/local/lib/firmware/gchd/
-sudo cp /tmp/dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_enc_h.bin /usr/local/lib/firmware/gchd/
-sudo cp /tmp/dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86m01_assp_nsec_idle.bin /usr/local/lib/firmware/gchd/
-sudo cp /tmp/dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86m01_assp_nsec_enc_h.bin /usr/local/lib/firmware/gchd/
+mkdir -p dmg
+sudo mount -o loop -t hfsplus ${GAME_CAPTURE_SLUG}.dmg.img dmg
+sudo mkdir -p /usr/local/lib/firmware/gchd
+sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_idle.bin /usr/local/lib/firmware/gchd/
+sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_enc_h.bin /usr/local/lib/firmware/gchd/
+sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86m01_assp_nsec_idle.bin /usr/local/lib/firmware/gchd/
+sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86m01_assp_nsec_enc_h.bin /usr/local/lib/firmware/gchd/
 mkdir -p build
 cd build
 cmake ..
 make
+cd ..
+sudo umount dmg

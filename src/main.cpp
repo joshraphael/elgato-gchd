@@ -43,7 +43,7 @@ void help(std::string name, bool full) {
 		  << "      Set the input color space to `yuv`, `rgb`, or `auto` (default)." << std::endl
 		  << "      Only has meaning for hdmi and component input." << std::endl
 		  << std::endl;
-	if( full ) {t
+	if( full ) {
 		std::cerr
 				<< "   -ir, -input-resolution <resolution>" << std::endl
 				<< "      Input resolution can be `ntsc`, `pal`, `720`, `1080`, or `auto`." << std::endl
