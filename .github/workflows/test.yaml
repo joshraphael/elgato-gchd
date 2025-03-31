@@ -16,7 +16,7 @@ concurrency:
 permissions:
   contents: write
 jobs:
-  deploy:
+  wiki:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
