@@ -28,6 +28,7 @@ dmg2img ${GAME_CAPTURE_SLUG}.dmg -o ${GAME_CAPTURE_SLUG}.dmg.img
 mkdir -p dmg
 sudo mount -o loop -t hfsplus ${GAME_CAPTURE_SLUG}.dmg.img dmg
 sudo mkdir -p /usr/local/lib/firmware/gchd
+ls -la dmg/
 sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_idle.bin /usr/local/lib/firmware/gchd/
 sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_enc_h.bin /usr/local/lib/firmware/gchd/
 sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86m01_assp_nsec_idle.bin /usr/local/lib/firmware/gchd/
