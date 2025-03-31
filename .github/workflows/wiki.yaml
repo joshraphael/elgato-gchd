@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - "master"
+    paths:
+      - wiki/**
+      - .github/workflows/test.yaml
+      - .github/workflows/wiki.yaml
 concurrency:
   group: wiki
   cancel-in-progress: true
