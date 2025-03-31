@@ -1,15 +1,8 @@
 name: Test Action
 on:
-  push:
-    branches:
-      - "!master"
-    paths:
-      - "wiki/**"
   pull_request:
     branches:
       - "**"
-    paths:
-      - "wiki/**"
 concurrency:
   group: wiki
   cancel-in-progress: true
