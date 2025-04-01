@@ -26,6 +26,7 @@ curl --output ${GAME_CAPTURE_SLUG}.dmg --location "https://edge.elgato.com/egc/m
 dmg2img ${GAME_CAPTURE_SLUG}.dmg -o ${GAME_CAPTURE_SLUG}.dmg.img
 mkdir -p dmg
 sudo mount ${GAME_CAPTURE_SLUG}.dmg.img dmg/
+sudo dmesg
 sudo mkdir -p /usr/local/lib/firmware/gchd
 ls -la dmg/
 sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_idle.bin /usr/local/lib/firmware/gchd/
