@@ -13,7 +13,7 @@ don't need to manually extract the firmware files.
 
 1. Download Game Capture from:
 
-   https://www.elgato.com/en/game-capture-hd-support
+   https://help.elgato.com/hc/de/articles/360027964072-Elgato-Game-Capture-HD-Software-Release-Notes-Windows
 
    Game Capture 3.2 is known to work. You will not need the hardware driver,
    just the Game Capture software (which is a much bigger download).
@@ -30,7 +30,7 @@ don't need to manually extract the firmware files.
 4. Change your current directory to the `firmware_extract` directory and then run:
 
     ```
-    ./extract_firmware_windows
+    ./extract_firmware_windows.sh
     ```
 
     This will create a `Firmware.tgz` file.

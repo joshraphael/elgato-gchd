@@ -18,6 +18,7 @@ rm -rf dmg
 rm -rf build
 rm -f ${GAME_CAPTURE_SLUG}.dmg
 rm -f ${GAME_CAPTURE_SLUG}.dmg.img
+rm firmware_extract/!\(extract_firmware_windows.sh\)
 sudo rm -rf /usr/local/lib/firmware/gchd
 mkdir -p firmware
 curl --output ${GAME_CAPTURE_SLUG}.dmg --location "https://edge.elgato.com/egc/macos/egcm/${GAME_CAPTURE_VERSION}/final/${GAME_CAPTURE_SLUG}.dmg"

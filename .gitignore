@@ -5,3 +5,6 @@ gchdm_*.dmg.img
 firmware/
 dmg/
 build/
+firmware_extract/Firmware.tgz
+firmware_extract/tmp.*
+firmware_extract/GameCapture*.msi
