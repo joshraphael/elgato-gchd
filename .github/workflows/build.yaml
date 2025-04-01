@@ -7,8 +7,13 @@ on:
 permissions:
   contents: write
 jobs:
-  build:
+  osx:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: bash install.sh
+      - run: make build_osx
+  windows:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make build_windows

@@ -10,16 +10,6 @@
 GAME_CAPTURE_VERSION=2.5
 GAME_CAPTURE_SLUG=gchdm_25_1119
 
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install git libusb-dev clang make build-essential cmake libusb-1.0 pkg-config 7zip p7zip-full -y
-rm -rf firmware
-rm -rf dmg
-rm -rf build
-rm -f ${GAME_CAPTURE_SLUG}.dmg
-rm -f ${GAME_CAPTURE_SLUG}.dmg.img
-rm firmware_extract/!\(extract_firmware_windows.sh\)
-sudo rm -rf /usr/local/lib/firmware/gchd
 mkdir -p firmware
 curl --output ${GAME_CAPTURE_SLUG}.dmg --location "https://edge.elgato.com/egc/macos/egcm/${GAME_CAPTURE_VERSION}/final/${GAME_CAPTURE_SLUG}.dmg"
 mkdir -p dmg
@@ -30,7 +20,3 @@ sudo cp dmg/Game\ Capture\ HD/Game\ Capture\ HD.app/Contents/Resources/Firmware/
 sudo cp dmg/Game\ Capture\ HD/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_enc_h.bin /usr/local/lib/firmware/gchd/
 sudo cp dmg/Game\ Capture\ HD/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86m01_assp_nsec_idle.bin /usr/local/lib/firmware/gchd/
 sudo cp dmg/Game\ Capture\ HD/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86m01_assp_nsec_enc_h.bin /usr/local/lib/firmware/gchd/
-mkdir -p build
-cd build
-cmake ..
-make
