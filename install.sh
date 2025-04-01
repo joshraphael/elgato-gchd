@@ -25,7 +25,7 @@ sudo modprobe hfsplus
 curl --output ${GAME_CAPTURE_SLUG}.dmg --location "https://edge.elgato.com/egc/macos/egcm/${GAME_CAPTURE_VERSION}/final/${GAME_CAPTURE_SLUG}.dmg"
 dmg2img ${GAME_CAPTURE_SLUG}.dmg -o ${GAME_CAPTURE_SLUG}.dmg.img
 mkdir -p dmg
-sudo mount -o loop ${GAME_CAPTURE_SLUG}.dmg.img dmg
+sudo mount ${GAME_CAPTURE_SLUG}.dmg.img dmg/
 sudo mkdir -p /usr/local/lib/firmware/gchd
 ls -la dmg/
 sudo cp dmg/Game\ Capture\ HD.app/Contents/Resources/Firmware/Beddo/mb86h57_h58_idle.bin /usr/local/lib/firmware/gchd/
