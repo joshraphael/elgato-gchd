@@ -1,12 +1,10 @@
-name: Test Action
+name: Test Wiki
 on:
   pull_request:
     branches:
       - "**"
     paths:
       - wiki/**
-      - .github/workflows/test.yaml
-      - .github/workflows/wiki.yaml
 concurrency:
   group: wiki
   cancel-in-progress: true
